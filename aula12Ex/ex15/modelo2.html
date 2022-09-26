@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar de idade.</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+    <header>
+        <h1>Verificar de idade.</h1>
+    </header>
+    <section>
+        <div>
+            <p>Ano de nascimento: 
+                <!-- Este INPUT é a caixa para digitar o ano de nascimento-->
+                <input type="number" name="txtano" id="txtano" min="0">
+            </p>
+            <p>
+               Sexo:
+                <!--Este RADIO serve para criar a BOLINHA DE SELEÇÃO DO SEXO-->
+               <input type="radio" name="radsex" id="mas" checked>
+               <!--Este LABEL é criado a frente do RADIO para sinalizar a opçao do RADIO.--> 
+               <label for="mas">Masculino</label>
+
+               <!--ATENÇÂO: O RADIO acime nessecita ter o mesmo NAME.-->
+               
+               <input type="radio" name="radsex" id="fem">
+               <label for="fem">Feminino</label>
+            </p>
+
+            <p>
+                <input type="button" value="Verificador" onclick="verificar()">
+            </p>
+        </div>
+        <div id="res">
+            Preencha os dados acima para ver o resultado!
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Will Enterprise.</p>
+    </footer>
+    <script src="script.js">
+    </script>
+</body>
+</html>

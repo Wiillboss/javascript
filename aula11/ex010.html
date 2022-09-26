@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        div#res{
+            margin-top: 20px;    
+        }
+        div#resposta{
+            margin-top: 20px;    
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de multas.</h1>
+    Velocidade do veículo: <input type="number" name="txtvel" id="txtvel" > Km/h.
+    <input type="button" value="Verificar." onclick="calcular()">
+    
+    <div id="res">
+    </div>
+
+    <h1>Sistema para identificar a nascionalidade.</h1>
+    Digite o país em que você nasceu: <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificando." onclick="ver()">
+    
+    <div id="resposta">
+    </div>
+    <script>
+        /*Também poderias usar:
+            var txtv = window.document.getElementById('txtvel')
+          A diferença é que em um esta usando a referência do input, o outro no ID.  
+        */  
+        function calcular(){
+            var txtv = window.document.querySelector('input#txtvel')
+            var res = window.document.querySelector('div#res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `Sua velocidade atual é de <strong>${vel} Km/h. </strong>`
+            
+            if(vel>60){
+                res.innerHTML += `<p>Você está <strong> MULTADO </strong> por excesso de velocidade.</p>`
+            } 
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`       
+        }
+        function ver(){
+            var pais = window.document.querySelector('input#pais')
+            var resposta = window.document.querySelector('div#resposta')
+            resposta.innerHTML = `O país em que você nasceu é: ${pais.value}.`
+            var w = pais.value
+            
+            if(w==`Brasil`){
+                resposta.innerHTML += `<p>Você é <strong>brasileiro</strong></p>.`
+            }else{
+                resposta.innerHTML += `<p>Você é <strong>extrangeiro</strong></p>.`
+            }
+        }
+    </script>
+</body>
+</html>

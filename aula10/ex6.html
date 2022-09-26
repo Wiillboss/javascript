@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+
+    <style>
+        div#area{
+            font: normal 20pt arial;
+            background: rgb(42, 139, 42);
+            color: white;
+            height: 200px;
+            line-height: 200px; 
+            text-align: center;
+            margin-bottom: 2px;
+        }
+
+        div#area2{
+            font: normal 20pt arial;
+            background: rgb(119, 125, 119);
+            color: white;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!--Atenção, dentro da DIV esta sendo inseridos "EVENTOS" de quando o mouse entrar e sair dentro da DIV além do evento de clic -->
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+    
+    <!--Dentro do script está o que vai ocorrer quando os eventos acontecer.
+            Ao clicar o texto muda assim como a cor, ocorre o mesmo nos eventos de entrar e sair. -->
+    <script>
+        var a = window.document.getElementById('area')
+        function clicar(){
+            a.style.background = 'red'
+            a.innerText = 'Clicou!'
+        }
+        function entrar(){
+            a.style.background = 'blue'
+            a.innerText = 'Entrou!'
+        }
+        function sair(){
+            a.style.background = 'green'
+            a.innerText = 'Saiu!'
+        }
+    </script>
+
+    <!--
+        Uma segunda opção mais limpa do código seria o que vem abaixo, onde os eventos são adicionados diretamente dentro do script.
+
+    <div id="area">
+        Interaja...
+    </div>
+    
+    <script>
+        var a = window.document.getElementById('area')
+        a.ddEventListener('click', clicar)
+        a.ddEventListener('mouseenter', entrar)
+        a.ddEventListener('mouseout', sair)
+
+        function clicar(){
+            a.style.background = 'red'
+            a.innerText = 'Clicou!'
+        }
+        function entrar(){
+            a.style.background = 'blue'
+            a.innerText = 'Entrou!'
+        }
+        function sair(){
+            a.style.background = 'green'
+            a.innerText = 'Saiu!'
+        }
+    </script>
+    -->
+
+    <!--
+    <div id="area2">
+        Interaja ...
+    </div>
+
+    <script>
+        var b = window.document.getElementById('area2')
+        b.ddEventListener('click', clicar)
+        b.ddEventListener('mouseenter', entrar)
+        b.ddEventListener('mouseout', sair)
+
+        function clicar(){
+            b.style.background = 'red'
+            b.innerText = 'Clicou!'
+        }
+        function entrar(){
+            b.style.background = 'blue'
+            b.innerText = 'Entrou!'
+        }
+        function sair(){
+            b.style.background = 'green'
+            b.innerText = 'Saiu!'
+        }
+    </script>
+    -->
+</body>
+</html>
